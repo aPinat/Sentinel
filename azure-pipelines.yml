@@ -34,6 +34,6 @@ steps:
       repositoryName: aPinat/Sentinel
       tagSource: userSpecifiedTag
       tag: '$(Build.BuildNumber)'
-      title: 'Deceive $(Build.BuildNumber)'
+      title: 'Sentinel $(Build.BuildNumber)'
       releaseNotesSource: inline
       assets: '$(System.DefaultWorkingDirectory)/**/bin/**/*.exe'
