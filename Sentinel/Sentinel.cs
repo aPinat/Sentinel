@@ -155,7 +155,7 @@ namespace Sentinel
         private async Task<string> GetSummonerIconPath(long summonerId)
         {
             var summoner = await GetSummoner(summonerId);
-            var icon = (int) summoner["profileIconId"];
+            var icon = (int) (summoner?["profileIconId"] ?? 29);
             var iconPath = Path.Combine(StorageDir, icon + ".png");
 
             // Download if it does not exist.
