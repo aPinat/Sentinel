@@ -257,8 +257,8 @@ namespace Sentinel
             // Ignore anything that is not DMs or club chats, unless we have all messages turned on.
             if (!settings.ShowAllConversations && payload.Data["type"] != "chat" && payload.Data["type"] != "club") return;
 
-            // Stop spamming me if the club is marked as muted.
-            if (payload.Data["type"] == "club" && payload.Data["isMuted"] == true) return;
+            // Stop spamming me if the chat is marked as muted.
+            if (payload.Data["isMuted"] == true) return;
 
             // If this is a lobby/champselect chat, only send messages if we're not focused.
             if (payload.Data["type"] != "chat" && payload.Data["type"] != "club" && league.IsFocused) return;
